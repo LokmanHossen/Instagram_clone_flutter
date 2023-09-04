@@ -20,17 +20,21 @@ class AuthMethods {
       if (email.isNotEmpty ||
           password.isNotEmpty ||
           username.isNotEmpty ||
-          bio.isNotEmpty) {
+          bio.isNotEmpty ||
+          file != null) {
         //rsgister user
         UserCredential cred = await _auth.createUserWithEmailAndPassword(
-            email: email, password: password);
-        print(cred.user!.uid);
+          email: email,
+          password: password,
+        );
+
+        // print(cred.user!.uid);
 
         String photoUrl = await StorageMethods()
             .uploadImageToStorage('profilePics', file, false);
 
         //add user to our database
-        await _firestore.collection('user').doc(cred.user!.uid).set({
+        await _firestore.collection('users').doc(cred.user!.uid).set({
           'username': username,
           'uid': cred.user!.uid,
           'email': email,
@@ -40,6 +44,26 @@ class AuthMethods {
           'photoUrl': photoUrl,
         });
         res = "success";
+      }
+    } catch (err) {
+      res = err.toString();
+    }
+    return res;
+  }
+
+  // llogin in user
+  Future<String> loginUser({
+    required String email,
+    required String password,
+  }) async {
+    String res = 'some error occured';
+    try {
+      if (email.isNotEmpty || password.isNotEmpty) {
+        await _auth.signInWithEmailAndPassword(
+            email: email, password: password);
+        res = "success";
+      } else {
+        res = "Please enter all the fields";
       }
     } catch (err) {
       res = err.toString();
