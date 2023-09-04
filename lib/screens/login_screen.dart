@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:instagram_clone_flutter/resources/auth_methods.dart';
-import 'package:instagram_clone_flutter/screens/home_screen.dart';
+import 'package:instagram_clone_flutter/responsive/mobile_screen_layout.dart';
+import 'package:instagram_clone_flutter/responsive/responsive_layout_screen.dart';
+import 'package:instagram_clone_flutter/responsive/web_screen_layout.dart';
+import 'package:instagram_clone_flutter/screens/signup_screen.dart';
 import 'package:instagram_clone_flutter/utils/colors.dart';
 import 'package:instagram_clone_flutter/utils/utils.dart';
 
@@ -29,14 +32,17 @@ class _LoginScreenState extends State<LoginScreen> {
   void loginUser() async {
     setState(() {
       _isLoading = true;
-    }); 
+    });
     String res = await AuthMethods().loginUser(
       email: _emailController.text,
       password: _passwordController.text,
     );
     if (res == "success") {
-      Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (context) => const HomeScreen(),
+       Navigator.of(context).pushReplacement(MaterialPageRoute(
+        builder: (context) => const ResponsiveLayout(
+          webScreenLayout: WebScreenLayout(),
+          mobileScreenLayout: MobileScreenLayout(),
+        ),
       ));
     } else {
       showSnackBar(res, context);
@@ -44,6 +50,12 @@ class _LoginScreenState extends State<LoginScreen> {
     setState(() {
       _isLoading = false;
     });
+  }
+
+  void navigateToSignup() {
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (context) => const SignupScreen(),
+    ));
   }
 
   @override
@@ -126,7 +138,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: const Text("Dont't have an accoubt ? "),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: navigateToSignup,
                     child: Container(
                       padding: const EdgeInsets.symmetric(vertical: 8),
                       child: const Text(
