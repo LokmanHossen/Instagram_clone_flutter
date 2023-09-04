@@ -21,6 +21,7 @@ class AuthMethods {
           password.isNotEmpty ||
           username.isNotEmpty ||
           bio.isNotEmpty ||
+          // ignore: unnecessary_null_comparison
           file != null) {
         //rsgister user
         UserCredential cred = await _auth.createUserWithEmailAndPassword(
