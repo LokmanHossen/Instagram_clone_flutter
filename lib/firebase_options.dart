@@ -23,15 +23,9 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -64,5 +58,25 @@ class DefaultFirebaseOptions {
     messagingSenderId: '365828607351',
     projectId: 'instagram-clone-22930',
     storageBucket: 'instagram-clone-22930.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyD9wqFxrH1jTLFosJkm33jdvxK4HoImVGA',
+    appId: '1:365828607351:ios:369fa036594e110ef5e572',
+    messagingSenderId: '365828607351',
+    projectId: 'instagram-clone-22930',
+    storageBucket: 'instagram-clone-22930.appspot.com',
+    iosClientId: '365828607351-5mavs52rfo0mj78jn31i4sd26aau72q7.apps.googleusercontent.com',
+    iosBundleId: 'com.example.instagramCloneFlutter',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyD9wqFxrH1jTLFosJkm33jdvxK4HoImVGA',
+    appId: '1:365828607351:ios:0a574b3711b3d6a3f5e572',
+    messagingSenderId: '365828607351',
+    projectId: 'instagram-clone-22930',
+    storageBucket: 'instagram-clone-22930.appspot.com',
+    iosClientId: '365828607351-uhfm4rhfbdhppsr7o0j4eed9krfbted7.apps.googleusercontent.com',
+    iosBundleId: 'com.example.instagramCloneFlutter.RunnerTests',
   );
 }
