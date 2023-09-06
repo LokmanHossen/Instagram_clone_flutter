@@ -38,7 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
       password: _passwordController.text,
     );
     if (res == "success") {
-       Navigator.of(context).pushReplacement(MaterialPageRoute(
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (context) => const ResponsiveLayout(
           webScreenLayout: WebScreenLayout(),
           mobileScreenLayout: MobileScreenLayout(),
@@ -74,7 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
               SvgPicture.asset(
                 'assets/ic_instagram.svg',
                 // ignore: deprecated_member_use
-                color: primaryColor,
+                color: primaryColor, 
                 height: 64,
               ),
               const SizedBox(
