@@ -153,6 +153,8 @@ class _AddPostScreenState extends State<AddPostScreen> {
             ),
             // POST FORM
             body: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 isLoading
                     ? const LinearProgressIndicator()
