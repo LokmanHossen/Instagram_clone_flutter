@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
           create: (_) => UserProvider(),
         ),
       ],
-      child: MaterialApp(
+      child: MaterialApp( 
         debugShowCheckedModeBanner: false,
         title: 'Instagram Clone',
         theme: ThemeData.dark().copyWith(
