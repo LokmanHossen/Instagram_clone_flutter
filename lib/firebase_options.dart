@@ -25,7 +25,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -44,39 +47,28 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyClKOQgKluoUjRJw-wqol7Cw2lE5zKQzi8',
-    appId: '1:365828607351:web:9447c46c21d2c9c6f5e572',
-    messagingSenderId: '365828607351',
-    projectId: 'instagram-clone-22930',
-    authDomain: 'instagram-clone-22930.firebaseapp.com',
-    storageBucket: 'instagram-clone-22930.appspot.com',
+    apiKey: 'AIzaSyD1o7ecyuJB9pmMLYkcjnjEYjhyyHHaLfI',
+    appId: '1:202012320145:web:0738cb21df85e83b743a30',
+    messagingSenderId: '202012320145',
+    projectId: 'instagram-clone-914f6',
+    authDomain: 'instagram-clone-914f6.firebaseapp.com',
+    storageBucket: 'instagram-clone-914f6.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBMp_c6XAWxc7k75JfUwihZF4xyii1Z1vM',
-    appId: '1:365828607351:android:cdbbc760eeadcc9cf5e572',
-    messagingSenderId: '365828607351',
-    projectId: 'instagram-clone-22930',
-    storageBucket: 'instagram-clone-22930.appspot.com',
+    apiKey: 'AIzaSyBpayM5EppLJofqtSV2xCDtA9NHuxC9BjY',
+    appId: '1:202012320145:android:75531e3a25b1f7b9743a30',
+    messagingSenderId: '202012320145',
+    projectId: 'instagram-clone-914f6',
+    storageBucket: 'instagram-clone-914f6.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD9wqFxrH1jTLFosJkm33jdvxK4HoImVGA',
-    appId: '1:365828607351:ios:369fa036594e110ef5e572',
-    messagingSenderId: '365828607351',
-    projectId: 'instagram-clone-22930',
-    storageBucket: 'instagram-clone-22930.appspot.com',
-    iosClientId: '365828607351-5mavs52rfo0mj78jn31i4sd26aau72q7.apps.googleusercontent.com',
+    apiKey: 'AIzaSyBPnvRyS8hlzp_i3zkZVikIcyjzxawpCnQ',
+    appId: '1:202012320145:ios:c40b907e427a4752743a30',
+    messagingSenderId: '202012320145',
+    projectId: 'instagram-clone-914f6',
+    storageBucket: 'instagram-clone-914f6.appspot.com',
     iosBundleId: 'com.example.instagramCloneFlutter',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyD9wqFxrH1jTLFosJkm33jdvxK4HoImVGA',
-    appId: '1:365828607351:ios:0a574b3711b3d6a3f5e572',
-    messagingSenderId: '365828607351',
-    projectId: 'instagram-clone-22930',
-    storageBucket: 'instagram-clone-22930.appspot.com',
-    iosClientId: '365828607351-uhfm4rhfbdhppsr7o0j4eed9krfbted7.apps.googleusercontent.com',
-    iosBundleId: 'com.example.instagramCloneFlutter.RunnerTests',
   );
 }
