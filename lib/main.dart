@@ -2,9 +2,9 @@ import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_clone_flutter/providers/user_provider.dart';
-import 'package:instagram_clone_flutter/responsive/mobile_screen_layout.dart';
-import 'package:instagram_clone_flutter/responsive/responsive_layout_screen.dart';
-import 'package:instagram_clone_flutter/responsive/web_screen_layout.dart';
+// import 'package:instagram_clone_flutter/responsive/mobile_screen_layout.dart';
+// import 'package:instagram_clone_flutter/responsive/responsive_layout_screen.dart';
+// import 'package:instagram_clone_flutter/responsive/web_screen_layout.dart';
 import 'package:instagram_clone_flutter/screens/login_screen.dart';
 import 'package:instagram_clone_flutter/utils/colors.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -16,10 +16,11 @@ void main() async {
   Platform.isAndroid
       ? await Firebase.initializeApp(
           options: const FirebaseOptions(
-            apiKey: "AIzaSyBMp_c6XAWxc7k75JfUwihZF4xyii1Z1vM",
-            appId: "1:365828607351:android:cdbbc760eeadcc9cf5e572e",
-            messagingSenderId: "365828607351",
-            projectId: "instagram-clone-22930",
+            apiKey: 'AIzaSyBpayM5EppLJofqtSV2xCDtA9NHuxC9BjY',
+            appId: '1:202012320145:android:75531e3a25b1f7b9743a30',
+            messagingSenderId: '202012320145',
+            projectId: 'instagram-clone-914f6',
+            storageBucket: 'instagram-clone-914f6.appspot.com',
           ),
         )
       : await Firebase.initializeApp();

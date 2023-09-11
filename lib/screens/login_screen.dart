@@ -46,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ));
     } else {
       // ignore: use_build_context_synchronously
-      showSnackBar(res, context);
+      showSnackBar(context, res);
     }
     setState(() {
       _isLoading = false;
@@ -74,7 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
               SvgPicture.asset(
                 'assets/ic_instagram.svg',
                 // ignore: deprecated_member_use
-                color: primaryColor, 
+                color: primaryColor,
                 height: 64,
               ),
               const SizedBox(

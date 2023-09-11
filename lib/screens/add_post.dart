@@ -79,12 +79,15 @@ class _AddPostScreenState extends State<AddPostScreen> {
           isLoading = false;
         });
         if (context.mounted) {
-          showSnackBar(context as String, 'Posted!' as BuildContext);
+          showSnackBar(
+            context,
+            'Posted!',
+          );
         }
         clearImage();
       } else {
         if (context.mounted) {
-          showSnackBar(context as String, res as BuildContext);
+          showSnackBar(context, res);
         }
       }
     } catch (err) {
@@ -92,8 +95,8 @@ class _AddPostScreenState extends State<AddPostScreen> {
         isLoading = false;
       });
       showSnackBar(
-        context as String,
-        err.toString() as BuildContext,
+        context,
+        err.toString(),
       );
     }
   }
@@ -153,8 +156,6 @@ class _AddPostScreenState extends State<AddPostScreen> {
             ),
             // POST FORM
             body: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 isLoading
                     ? const LinearProgressIndicator()

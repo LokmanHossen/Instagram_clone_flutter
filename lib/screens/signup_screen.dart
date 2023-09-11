@@ -61,9 +61,8 @@ class _SignupScreenState extends State<SignupScreen> {
 
     if (res != 'success') {
       // ignore: use_build_context_synchronously
-      await showSnackBar(res, context);
+      await showSnackBar(context, res);
     } else {
-     
       Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (context) => const ResponsiveLayout(
           webScreenLayout: WebScreenLayout(),
